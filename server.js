@@ -89,12 +89,12 @@ io.sockets.on('connection', function(socket) {
     socket.on('addUser', function (username) { 
         if (self.players.length > 0 && self.players.filter(t => t.name == username).length > 0){
         }else{
-
+console.log("888888888888888888888888")
         console.log(username);
         self.players.push({
             "name":username,
             "id":self.players.length+1,
-            "color":"#800000",
+            "color":"#"+((1<<24)*Math.random()|0).toString(16),
             "position":1,
             "isActive":false
         })
@@ -107,6 +107,9 @@ io.sockets.on('connection', function(socket) {
 
     socket.on('gridchange',function(data){
         console.log(data);
+        console.log("self.players");
+        console.log(self.players);
+        console.log("self.players");
         //  var currentChance={
         //         currentPlayer:1,
         //         number:randomNum,
@@ -114,6 +117,7 @@ io.sockets.on('connection', function(socket) {
 
         //      }
     if(self.maxPlayers == self.players.length) {
+        console.log("////**********//////")
         console.log(data.currentPlayer);
         console.log(self.players.filter(t => t.id ==data.currentPlayer))
          var currentPlayer = self.players.filter(t => t.id ==data.currentPlayer)[0];

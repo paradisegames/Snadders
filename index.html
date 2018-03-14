@@ -1,10 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
     
   <style>      #dice {font-size: 6rem;}</style>
-=======
->>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
 
 <head>
     <meta charset="UTF-8">
@@ -20,20 +17,8 @@
             var socket = io.connect();
             var currentPlayer;
 
-<<<<<<< HEAD
 
-            // document.querySelector('input[type=button]').addEventListener('click', function(){rollTheDice();});
-
-// var rollTheDice = function() {
-   
-// }
-
-
-
-            $("#selectroom").click(function(){
-=======
             $("#selectroom").click(function () {
->>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
                 room = $("#roomname").val();
                 console.log(room);
                 socket.emit('room', room);
@@ -65,13 +50,10 @@
             
             console.log('dice number is '+randomNum);
             document.getElementById('dice').innerHTML = output;
-
-            document.getElementById("mylabel1").innerHTML=randomNum;
-
              var randomNum= Math.floor(Math.random() * 5) + 1;
              console.log("random number is " + randomNum);
              currentPlayer = sessionStorage.getItem("playerid");
-             debugger;
+             console.log(currentPlayer);
              var currentChance={
                 currentPlayer:currentPlayer,
                 number:randomNum,
@@ -92,11 +74,11 @@
                 var board=data.message.board;
                 var players=data.message.players;
                 players.forEach(function(player){
-                    var player_element = document.getElementById('player-'+player.id);
-                    if (player_element){
+                    var player_elements = document.getElementsByName('player-'+player.id);
+                    player_elements.forEach(function (player_element) {
                         player_element.remove();
-                    }
-                });
+                })
+            });
                 for (count = 0; count < board.length; count++) {
                     var currentField = board[count];
                     if (currentField.players.length > 0) {
@@ -104,22 +86,14 @@
                         var cellId = currentField.id;
                         var element = document.getElementById(cellId);
                         debugger;
-                        
-                        // <div class="player ml-1">
-                               
-                        //         <span class="badge badge-pill ">KG</span>
-                        //         <span class="badge badge-pill ">MG</span>
-                        //         <span class="badge badge-pill ">LG</span>
-                        //         <span class="badge badge-pill ">PK</span>
-                        //         <span class="badge badge-pill ">MD</span>
-
-                        // </div>
-
+                 
                         currentField.players.forEach(function (player) {
+                            console.log("currentField.players");
+                            console.log(currentField.players);
                             var currentPlayer = players.filter(t => t.id == player)[0];
                             var dateSpan = document.createElement('span')
-                            dateSpan.innerHTML = currentPlayer.name;
-                            dateSpan.id = "player-" + currentPlayer.id;
+                            dateSpan.innerHTML = currentPlayer.name.substring(0, 2);
+                            dateSpan.name = "player-" + currentPlayer.id;
                             dateSpan.className="badge badge-pill";
                             element.appendChild(dateSpan);
                         }, this);
@@ -894,23 +868,11 @@
                 </div>
 
             </div>
-            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-2 col-12">
-
-<<<<<<< HEAD
-                <button id="randomNumberButton">Click</button>
-                Your number is <label id="mylabel1"></label>
-              
-                <div id="dice"></div>
-            </div>
+           
 
 
             <!-- <input type="number" min="1" max="6">   -->
-            
-            
-        </div>
-=======
-
-
+            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-2 col-12">
                 <div class="row">
                     <div class="col col-sm-12">
                         <div class="backgaround">
@@ -918,7 +880,6 @@
                         </div>
                         <div class="px-3">
                             <h1 class="text-center font-weight-bold">Snadders</h1>
->>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
 
                             <hr class="my-2">
                             <h6 class=" font-weight-bold">Name: Chamara Weerasinghe</h6>
@@ -930,9 +891,16 @@
                             <hr class="my-2">
 
                             <button id="randomNumberButton" class="btn game-btn btn-md">Roll</button>
+                            <div id="dice"></div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+        </div>
+
+
+
             </div>
         </div>
 
