@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     
+  <style>      #dice {font-size: 6rem;}</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +17,15 @@
             var socket = io.connect();
             var currentPlayer;
 
+
+            // document.querySelector('input[type=button]').addEventListener('click', function(){rollTheDice();});
+
+// var rollTheDice = function() {
+   
+// }
+
+
+
             $("#selectroom").click(function(){
                 room = $("#roomname").val();
                 console.log(room);
@@ -27,6 +38,19 @@
             });
             
            $('#randomNumberButton').click(function(){
+
+            var i,
+            faceValue,
+            output = '',
+            faceValue = Math.floor(Math.random() * 6);
+            output += "&#x268" + faceValue + "; ";
+            randomNum=faceValue+1;
+            
+            console.log('dice number is '+randomNum);
+            document.getElementById('dice').innerHTML = output;
+
+            document.getElementById("mylabel1").innerHTML=randomNum;
+
              var randomNum= Math.floor(Math.random() * 5) + 1;
              console.log("random number is " + randomNum);
              if(currentPlayer ==1 ) currentPlayer = 2;
@@ -252,9 +276,14 @@ Incoming Chat: <ul id="incomingChatMessages"></ul>
                   <button id="register">register</button>
 
                 <button id="randomNumberButton">Click</button>
-
+                Your number is <label id="mylabel1"></label>
+              
+                <div id="dice"></div>
             </div>
 
+
+            <!-- <input type="number" min="1" max="6">   -->
+            
             
         </div>
 
