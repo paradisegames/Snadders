@@ -1,5 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+    
+  <style>      #dice {font-size: 6rem;}</style>
+=======
+>>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +20,20 @@
             var socket = io.connect();
             var currentPlayer;
 
+<<<<<<< HEAD
+
+            // document.querySelector('input[type=button]').addEventListener('click', function(){rollTheDice();});
+
+// var rollTheDice = function() {
+   
+// }
+
+
+
+            $("#selectroom").click(function(){
+=======
             $("#selectroom").click(function () {
+>>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
                 room = $("#roomname").val();
                 console.log(room);
                 socket.emit('room', room);
@@ -37,6 +55,19 @@
                     }
             })
            $('#randomNumberButton').click(function(){
+
+            var i,
+            faceValue,
+            output = '',
+            faceValue = Math.floor(Math.random() * 6);
+            output += "&#x268" + faceValue + "; ";
+            randomNum=faceValue+1;
+            
+            console.log('dice number is '+randomNum);
+            document.getElementById('dice').innerHTML = output;
+
+            document.getElementById("mylabel1").innerHTML=randomNum;
+
              var randomNum= Math.floor(Math.random() * 5) + 1;
              console.log("random number is " + randomNum);
              currentPlayer = sessionStorage.getItem("playerid");
@@ -865,6 +896,19 @@
             </div>
             <div class="col-xl-2 col-lg-4 col-md-4 col-sm-2 col-12">
 
+<<<<<<< HEAD
+                <button id="randomNumberButton">Click</button>
+                Your number is <label id="mylabel1"></label>
+              
+                <div id="dice"></div>
+            </div>
+
+
+            <!-- <input type="number" min="1" max="6">   -->
+            
+            
+        </div>
+=======
 
 
                 <div class="row">
@@ -874,6 +918,7 @@
                         </div>
                         <div class="px-3">
                             <h1 class="text-center font-weight-bold">Snadders</h1>
+>>>>>>> 587b9b1fb15212c16e0010c76570c7bf5d9d8c9e
 
                             <hr class="my-2">
                             <h6 class=" font-weight-bold">Name: Chamara Weerasinghe</h6>
