@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+         $(function () {
+            var socket = io.connect();
+            $('#register').click(function(e){
+                e.preventDefault();
+                        var Username = $("#username").val();
+                        if(Username){
+                            socket.emit('addUser', Username);
+                            sessionStorage.setItem("playername", Username);
+                            window.location.href = 'index';
+                        }
+                        else{
+                            alert('Please Enter Name');
+                        }
+                    });
+                });
+    </script>
+</head>
+
+<body>
+    <div class=" container-fluid bgname ">
+
+        <div class="row  ">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col ">
+
+                <div class="row  no-gutters main no-gutters justify-content-md-center justify-content-lg-center justify-content-xl-center ">
+
+                    <!-- <div class="background-img">
+                        <img class="img-fluid " src="images/full-name.jpg" alt="">
+                    </div> -->
+
+                    <div class="text-container row align-items-center">
+                            <div class="col">
+                                    <div class="align-items-center">
+                                            <div class="px-5  w-100  text-center">
+                                                    <h1 class="display-1 font-weight-bold hidden-xs-down">Snadders</h1>
+                        
+                                                    <br><br>
+                                                    <!-- <hr class="my-4"> -->
+                        
+                                                   
+                                            </div>
+                                            <form>
+                                                <div class="form-group row ">
+                                                    <div class="col-sm-3 ">
+                                                            <h3 class=""><label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Name</label></h3>
+                                                    </div>
+                                                   
+                                                    <div class="col-sm-9 no-gutters mt-2">
+                                                        <input type="text" class="form-control font-weight-bold form-control-lg" id="username" />
+                                                    </div>
+                        
+                                                    <hr class="my-4">
+                                                    <div class="offset-sm-3 ">                                                        
+                                                            <button   class="btn game-btn ml-3" id="register">register</button>                                                            
+                                                    </div>
+                                                           
+                                                </div>
+                                            
+                                            </form>
+                                    </div>
+                            </div>
+
+                          </div>
+                   
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- <canvas id="myCanvas">
+ 
+            </canvas> -->
+
+
+    </div>
+
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
