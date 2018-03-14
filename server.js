@@ -17,7 +17,7 @@ self.maxPlayers = 2;
 self.board = [];
 self.players = [];
 
-for(x= 1 ; x <= 24 ; x++){
+for(x= 1 ; x <= 100 ; x++){
     var field= {
         players:[],
         id:x,
@@ -27,8 +27,21 @@ for(x= 1 ; x <= 24 ; x++){
 }
 
 
-self.board[11].transition = 20;
-self.board[15].transition = 2;
+//snakes
+self.board[21].transition = 3;
+self.board[14].transition = 6;
+self.board[54].transition = 36;
+self.board[77].transition = 63;
+self.board[87].transition = 53;
+self.board[93].transition = 87;
+self.board[97].transition = 79;
+
+//ladders
+self.board[3].transition = 24;
+self.board[11].transition = 32;
+self.board[20].transition = 59;
+self.board[50].transition = 89;
+self.board[65].transition = 86;
 
 
 // handle incoming connections from clients
@@ -90,6 +103,7 @@ io.sockets.on('connection', function(socket) {
            console.log( self.board.length) 
          if(nextPosition <= self.board.length ) {
          var newPosition = self.board.filter(t => t.id == nextPosition)[0];
+         console.log(newPosition);
          var currentPosition = self.board.filter(t => t.id == currentPlayer.position)[0];
         
         // remove player from the prev cell 

@@ -73,13 +73,23 @@
                         var cellId = currentField.id;
                         var element = document.getElementById(cellId);
                         debugger;
+                        
+                        // <div class="player ml-1">
+                               
+                        //         <span class="badge badge-pill ">KG</span>
+                        //         <span class="badge badge-pill ">MG</span>
+                        //         <span class="badge badge-pill ">LG</span>
+                        //         <span class="badge badge-pill ">PK</span>
+                        //         <span class="badge badge-pill ">MD</span>
 
+                        // </div>
 
                         currentField.players.forEach(function (player) {
                             var currentPlayer = players.filter(t => t.id == player)[0];
                             var dateSpan = document.createElement('span')
                             dateSpan.innerHTML = currentPlayer.name;
                             dateSpan.id = "player-" + currentPlayer.id;
+                            dateSpan.className="badge badge-pill";
                             element.appendChild(dateSpan);
                         }, this);
 
@@ -144,50 +154,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             100
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="99">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             99
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="98">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             98
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="97">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             97
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="96">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             96
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="95">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             95
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="94">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             94
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="93">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             93
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="92">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             92
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh"  id="91">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             91
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -195,50 +225,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             81
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh"  id="82">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             82
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh"  id="83">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             83
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh"  id="84">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             84
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh"  id="85">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             85
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh"  id="86">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             86
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="87">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             87
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="100">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             88
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="89">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             89
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="90">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             90
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -246,50 +296,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             80
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="79">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             79
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="78">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             78
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="77">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             77
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="76">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             76
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="75">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             75
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="74">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             74
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="73">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             73
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="72">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             72
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="71">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             71
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -297,50 +367,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             61
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="62">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             62
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="63">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             63
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="64">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             64
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="65">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             65
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="66">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             66
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="67">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             67
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="68">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             68
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="69">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             69
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="70">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             70
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -348,15 +438,21 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             60
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="59">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             59
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="58">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             58
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="57">
@@ -368,30 +464,42 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             56
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="55">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             55
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="54">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             54
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="53">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             53
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="52">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             52
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="51">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             51
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -399,10 +507,14 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             41
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="42">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             42
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="43">
@@ -414,35 +526,50 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             44
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="45">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             45
+                        </div>
+                        <div class="player ml-1">
+                        </div>
+                    </div>
+                    
+                    <div class=" col border hh" id="46">
+                        <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
+                            46
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="47">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             47
                         </div>
-                    </div>
-                    <div class=" col border hh" id="46">
-                        <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
-                            46
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="48">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             48
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="49">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             49
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="50">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             50
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -450,50 +577,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             40
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="39">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             39
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="38">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             38
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="37">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             37
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="36">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             36
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="35">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             35
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="34">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             34
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="33">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             33
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="32">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             32
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="31">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             31
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -501,50 +648,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             21
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="22">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             22
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="23">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             23
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="24">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             24
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="25">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             25
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="26">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             27
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="27">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             26
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="28">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             28
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="29">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             29
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="30">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             30
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -552,50 +719,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             20
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="19">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             19
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="18">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             18
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="17">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             17
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="16">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             16
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="15">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             15
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="14">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             14
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="13">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             13
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="12">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             12
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="11">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             11
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
@@ -603,50 +790,70 @@
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             1
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="2">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             2
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="3">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             3
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="4">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             4
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="5">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             5
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="6">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             6
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="7">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             7
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="8">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             8
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class=" col border hh" id="9">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             9
                         </div>
+                        <div class="player ml-1">
+                        </div>
                     </div>
                     <div class=" col border hh" id="10">
                         <div class="font-weight-bold ml-lg-2 mt-lg-2 ml-md-1 mr-md-1 ">
                             10
+                        </div>
+                        <div class="player ml-1">
                         </div>
                     </div>
                     <div class="w-100"></div>
