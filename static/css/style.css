@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700,900");
 /* line 1, bower_components/bootstrap/scss/_root.scss */
 :root {
   --blue: #007bff;
@@ -11277,31 +11277,92 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
-/*
-Bootstrap scss overrides
-*/
-/* line 15, resources/sass/style.scss */
+/* line 9, resources/sass/style.scss */
 body {
-  font-family: "Droid Sans", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 14px;
   line-height: 1.42857143; }
 
-/* line 23, resources/sass/style.scss */
+/* line 15, resources/sass/style.scss */
 .backgaround {
   width: 100%;
   height: auto;
-  position: relative; }
-  /* line 27, resources/sass/style.scss */
+  position: relative;
+  z-index: -1; }
+  /* line 20, resources/sass/style.scss */
   .backgaround img {
     width: 100%;
-    height: auto !important;
+    height: 100vh;
     position: absolute;
     z-index: 1; }
 
-/* line 35, resources/sass/style.scss */
-.hh {
-  height: 200px; }
+/* line 60, resources/sass/style.scss */
+body {
+  font-size: 7px; }
 
-/* line 38, resources/sass/style.scss */
-.svg {
-  position: absolute; }
+/* line 64, resources/sass/style.scss */
+.backgaround img {
+  height: 50vh; }
+
+@media (min-width: 576px) {
+  /* line 70, resources/sass/style.scss */
+  body {
+    font-size: 10px; }
+  /* line 74, resources/sass/style.scss */
+  .backgaround img {
+    height: 75vh; } }
+
+@media (min-width: 768px) {
+  /* line 81, resources/sass/style.scss */
+  body {
+    font-size: 10px; }
+  /* line 85, resources/sass/style.scss */
+  .backgaround img {
+    height: 60vh; } }
+
+@media (min-width: 992px) {
+  /* line 93, resources/sass/style.scss */
+  body {
+    font-size: 14px; }
+  /* line 97, resources/sass/style.scss */
+  .backgaround img {
+    height: 100vh; } }
+
+/* line 103, resources/sass/style.scss */
+.border {
+  border: 1px solid rgba(255, 255, 255, 0.36) !important; }
+
+/* line 106, resources/sass/style.scss */
+.game-btn {
+  color: #000;
+  background-color: transparent;
+  background-image: none;
+  border-color: #000;
+  border: 3px solid;
+  border-radius: 5px;
+  font-weight: 900; }
+  /* line 63, bower_components/bootstrap/scss/mixins/_buttons.scss */
+  .game-btn:hover {
+    color: #000;
+    background-color: #000;
+    border-color: #000; }
+  /* line 69, bower_components/bootstrap/scss/mixins/_buttons.scss */
+  .game-btn:focus, .game-btn.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
+  /* line 74, bower_components/bootstrap/scss/mixins/_buttons.scss */
+  .game-btn.disabled, .game-btn:disabled {
+    color: #000;
+    background-color: transparent; }
+  /* line 80, bower_components/bootstrap/scss/mixins/_buttons.scss */
+  .game-btn:not(:disabled):not(.disabled):active, .game-btn:not(:disabled):not(.disabled).active,
+  .show > .game-btn.dropdown-toggle {
+    color: #fff;
+    background-color: #000;
+    border-color: #000; }
+    /* line 87, bower_components/bootstrap/scss/mixins/_buttons.scss */
+    .game-btn:not(:disabled):not(.disabled):active:focus, .game-btn:not(:disabled):not(.disabled).active:focus,
+    .show > .game-btn.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5); }
+  /* line 111, resources/sass/style.scss */
+  .game-btn:hover {
+    color: #fff; }
