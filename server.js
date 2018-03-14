@@ -1,15 +1,3 @@
-// var fs = require('fs')
-//     , http = require('http')
-//     , socketio = require('socket.io');
-// var server = http.createServer(function(req, res) {
-//     res.writeHead(200, { 'Content-type': 'text/html'});
-//     res.end(fs.readFileSync(__dirname + '/index.html'));
-
-// }).listen((process.env.PORT || 8080), function() {
-//     console.log('Listening at: http://localhost:8080');
-// });
-
-
 var express = require('express');  
 var app = express();  
 var server = require('http').createServer(app);  
@@ -22,25 +10,122 @@ app.get('/', function(req, res,next) {
 
 server.listen((process.env.PORT || 8080)); 
 
-// attach Socket.io to our HTTP server
-
-
 var self = this;
 var room;
+
+self.board = [];
+self.players = [{
+"name":"kum",
+"id":"1",
+"color":"#800000",
+"position":1,
+"isActive":false
+},
+{
+"name":"rushan",
+"id":"2",
+"color":"#FF0000",
+"position":1,
+"isActive":true
+}];
+
+for(x= 1 ; x <= 24 ; x++){
+    var field= {
+        players:[],
+        id:x,
+        transition:x       
+    }
+    self.board.push(field);
+}
+
+self.board[0].players = [1,2];
+self.board[11].transition = 20;
+self.board[15].transition = 2;
+
 
 // handle incoming connections from clients
 io.sockets.on('connection', function(socket) {
     // once a client has connected, we expect to get a ping from them saying what room they want to join
     socket.on('room', function(room) {
         self.room = room;
-        console.log(self.room);
+        console.log(self.board);
+        io.sockets.in(self.room).emit('start', 
+                   {id:0, 
+                    type:'start',
+                    message:{
+                        'board':self.board,
+                        'players':self.players
+                    }
+                });
         socket.join(room);
     });
+
     socket.on('message', function (msg) { 
         console.log(msg);
         io.sockets.in(self.room).emit('message', msg); 
     });
+
+    socket.on('addUser', function (username) { 
+        console.log(username);
+        self.players.push({
+            "name":username,
+            "id":self.players.length+1,
+            "color":"#800000",
+            "position":1,
+            "isActive":false
+        })
+        console.log(self.players);
+    });
+
+
+    socket.on('gridchange',function(data){
+        console.log(data);
+        //  var currentChance={
+        //         currentPlayer:1,
+        //         number:randomNum,
+        //         room:room
+
+        //      }
+
+         var currentPlayer = self.players.filter(t => t.id ==data.currentPlayer)[0];
+         var nextPosition = currentPlayer.position + data.number;
+         console.log("**********") 
+          console.log(nextPosition) 
+           console.log( self.board.length) 
+         if(nextPosition <= self.board.length ) {
+         var newPosition = self.board.filter(t => t.id == nextPosition)[0];
+         var currentPosition = self.board.filter(t => t.id == currentPlayer.position)[0];
+        
+        // remove player from the prev cell 
+        var index=currentPosition.players.indexOf(data.currentPlayer);
+        console.log("index-" + index)
+        console.log(currentPosition)
+        currentPosition.players.splice(index,1);
+        currentPlayer.position = newPosition.transition ; 
+        console.log("splice")
+         
+        console.log(currentPosition)
+         
+
+         
+         currentPosition = self.board.filter(t => t.id == currentPlayer.position)[0];
+         currentPosition.players.push(data.currentPlayer);
+
+        io.sockets.in(self.room).emit('start', 
+                   {id:0, 
+                    type:'start',
+                    message:{
+                        'board':self.board,
+                        'players':self.players
+                    }
+                });
+         }
+
+        //io.to(room_name).emit('chat message', msg);
+    })
 });
+
+
 
 
 

@@ -12,21 +12,71 @@
     <script>
         $(function(){
             var room = "";
+            var socket = io.connect();
+            var currentPlayer;
+
             $("#selectroom").click(function(){
-                debugger;
                 room = $("#roomname").val();
                 console.log(room);
                 socket.emit('room', room);
             })
-            
-            var socket = io.connect();
 
-            // let's assume that the client page, once rendered, knows what room it wants to join
+            $('registerButton').click(function(){
+                  var Username =   $("#username").val();
+                  socket.emit('addUser', Username);
+            });
             
+           $('#randomNumberButton').click(function(){
+             var randomNum= Math.floor(Math.random() * 5) + 1;
+             console.log("random number is " + randomNum);
+             if(currentPlayer ==1 ) currentPlayer = 2;
+             else currentPlayer = 1;
 
-            socket.on('connect', function() {
-                // Connected, let's sign-up for to receive messages for this room
-                socket.emit('room', room);
+             var currentChance={
+                currentPlayer:currentPlayer,
+                number:randomNum,
+                room:room
+
+             }
+ 
+             
+             socket.emit('gridchange', currentChance);
+           })
+
+            // socket.on('connect', function() {
+            //     socket.emit('room', room);
+            // });
+
+            socket.on('start', function(data) {
+                console.log(data);
+                var board=data.message.board;
+                var players=data.message.players;
+                players.forEach(function(player){
+                    var player_element = document.getElementById('player-'+player.id);
+                    if (player_element){
+                        player_element.remove();
+                    }
+                });
+                for(count=0;count<board.length;count++){
+                    var currentField=board[count];
+                    if(currentField.players.length>0){
+
+                        var cellId=currentField.id;
+                        var element=document.getElementById(cellId);
+debugger;
+                       
+
+                        currentField.players.forEach(function(player) {
+                            var currentPlayer = players.filter(t => t.id ==player)[0];
+                            var dateSpan = document.createElement('span')
+                            dateSpan.innerHTML = currentPlayer.name;
+                            dateSpan.id = "player-" + currentPlayer.id;
+                            element.appendChild(dateSpan);
+                        }, this);
+                        
+                    }
+                }
+                
             });
 
             socket.on('message', function(data) {
@@ -154,33 +204,42 @@ Incoming Chat: <ul id="incomingChatMessages"></ul>
                             </g>
                         </svg>
                     </div>
-                    <div class=" col border hh">11</div>
-                    <div class=" col border hh">12</div>
-                    <div class=" col border hh">13</div>
-                    <div class=" col border hh">14</div>
-                    <div class=" col border hh">15</div>
-                    <div class=" col border hh">16</div>
+                   
                     <div class="w-100"></div>
-                    <div class=" col border hh">11</div>
-                    <div class=" col border hh">12</div>
-                    <div class=" col border hh">13</div>
-                    <div class=" col border hh">14</div>
-                    <div class=" col border hh">15</div>
-                    <div class=" col border hh">16</div>
+                    <div  id="24" class=" col border hh">24</div>
+                    <div  id="23" class=" col border hh">23</div>
+                    <div  id="22" class=" col border hh">22</div>
+                    <div  id="21" class=" col border hh">21</div>
+                    <div  id="20" class=" col border hh">20</div>
+                    <div  id="19" class=" col border hh">19</div>
+
+                   
                     <div class="w-100"></div>
-                    <div class=" col border hh">11</div>
-                    <div class=" col border hh">12</div>
-                    <div class=" col border hh">13</div>
-                    <div class=" col border hh">14</div>
-                    <div class=" col border hh">15</div>
-                    <div class=" col border hh">16</div>
+                    <div  id="13" class=" col border hh">13</div>
+                    <div  id="14" class=" col border hh">14</div>
+                    <div  id="15" class=" col border hh">15</div>
+                    <div  id="16" class=" col border hh">16</div>
+                    <div  id="17" class=" col border hh">17</div>
+                    <div  id="18" class=" col border hh">18</div>
+
                     <div class="w-100"></div>
-                    <div class=" col border hh">11</div>
-                    <div class=" col border hh">12</div>
-                    <div class=" col border hh">13</div>
-                    <div class=" col border hh">14</div>
-                    <div class=" col border hh">15</div>
-                    <div class=" col border hh">16</div>
+                    <div id="12"  class=" col border hh">12</div>
+                    <div id="11" class=" col border hh">11</div>
+                    <div id="10" class=" col border hh">10</div>
+                    <div id="9" class=" col border hh">9</div>
+                    <div id="8" class=" col border hh">8</div>
+                    <div id="7" class=" col border hh">7</div>
+
+
+                    <div class="w-100"></div>
+                    <div id="1" class=" col border hh">1</div>
+                    <div id="2" class=" col border hh">2</div>
+                    <div id="3" class=" col border hh">3</div>
+                    <div id="4" class=" col border hh">4</div>
+                    <div id="5" class=" col border hh">5</div>
+                    <div id="6"  class=" col border hh">6</div>
+
+                    
                     <div class="w-100"></div>
 
 
@@ -189,7 +248,14 @@ Incoming Chat: <ul id="incomingChatMessages"></ul>
 
             </div>
             <div class="col-lg-2 col-md-4 col-sm-2 col-12"> hello
+                  <input id="username" type="text">
+                  <button id="register">register</button>
+
+                <button id="randomNumberButton">Click</button>
+
             </div>
+
+            
         </div>
 
 
