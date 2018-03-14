@@ -1,0 +1,29 @@
+{
+  "name": "snadders",
+  "version": "1.0.0",
+  "description": "vetserve games",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paradisegames/Snadders.git"
+  },
+  "keywords": [
+    "vetserve",
+    "snakes",
+    "and",
+    "ladders"
+  ],
+  "author": "vetserve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paradisegames/Snadders/issues"
+  },
+  "homepage": "https://github.com/paradisegames/Snadders#readme"
+}
