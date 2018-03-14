@@ -39,8 +39,25 @@ for(x= 1 ; x <= 24 ; x++){
 }
 
 self.board[0].players = [1,2];
-self.board[11].transition = 20;
-self.board[15].transition = 2;
+
+//snakes
+self.board[22].transition = 3;
+self.board[15].transition = 6;
+self.board[55].transition = 36;
+self.board[78].transition = 63;
+self.board[88].transition = 53;
+self.board[94].transition = 87;
+self.board[98].transition = 79;
+
+//ladders
+self.board[4].transition = 24;
+self.board[12].transition = 32;
+self.board[21].transition = 59;
+self.board[51].transition = 89;
+self.board[66].transition = 86;
+
+// self.board[11].transition = 20;
+// self.board[15].transition = 2;
 
 
 // handle incoming connections from clients
