@@ -13,21 +13,9 @@ server.listen((process.env.PORT || 8080));
 var self = this;
 var room;
 
+self.maxPlayers = 2;
 self.board = [];
-self.players = [{
-"name":"kum",
-"id":"1",
-"color":"#800000",
-"position":1,
-"isActive":false
-},
-{
-"name":"rushan",
-"id":"2",
-"color":"#FF0000",
-"position":1,
-"isActive":true
-}];
+self.players = [];
 
 for(x= 1 ; x <= 24 ; x++){
     var field= {
@@ -59,6 +47,9 @@ self.board[0].players = [1,2];
 // self.board[11].transition = 20;
 // self.board[15].transition = 2;
 
+self.board[11].transition = 20;
+self.board[15].transition = 2;
+
 
 // handle incoming connections from clients
 io.sockets.on('connection', function(socket) {
@@ -83,6 +74,9 @@ io.sockets.on('connection', function(socket) {
     });
 
     socket.on('addUser', function (username) { 
+        if (self.players.length > 0 && self.players.filter(t => t.name == username).length > 0){
+        }else{
+
         console.log(username);
         self.players.push({
             "name":username,
@@ -92,6 +86,9 @@ io.sockets.on('connection', function(socket) {
             "isActive":false
         })
         console.log(self.players);
+        self.board[0].players.push(self.players.length);
+         io.sockets.in(self.room).emit('getPlayerDetails',self.players);
+                 }
     });
 
 
@@ -103,7 +100,9 @@ io.sockets.on('connection', function(socket) {
         //         room:room
 
         //      }
-
+    if(self.maxPlayers == self.players.length) {
+        console.log(data.currentPlayer);
+        console.log(self.players.filter(t => t.id ==data.currentPlayer))
          var currentPlayer = self.players.filter(t => t.id ==data.currentPlayer)[0];
          var nextPosition = currentPlayer.position + data.number;
          console.log("**********") 
@@ -137,7 +136,7 @@ io.sockets.on('connection', function(socket) {
                     }
                 });
          }
-
+}
         //io.to(room_name).emit('chat message', msg);
     })
 });
